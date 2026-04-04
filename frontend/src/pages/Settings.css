@@ -1,0 +1,188 @@
+.settings-page {
+  padding: var(--spacing-6);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.settings-header {
+  margin-bottom: var(--spacing-8);
+}
+
+.settings-hero {
+  padding: var(--spacing-5);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--primary-fixed) 62%, transparent), transparent 42%),
+    linear-gradient(180deg, var(--surface-container-lowest), var(--surface-container-low));
+}
+
+.settings-hero-title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.settings-hero-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--primary-fixed) 70%, transparent);
+  color: var(--primary);
+}
+
+.settings-hero-copy {
+  margin-top: var(--spacing-2);
+  max-width: 680px;
+  color: var(--on-surface-variant);
+}
+
+.settings-section {
+  margin-bottom: var(--spacing-10);
+}
+
+.settings-section-title {
+  margin-bottom: var(--spacing-4);
+}
+
+.settings-heading {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.settings-copy {
+  margin-top: var(--spacing-2);
+  max-width: 680px;
+}
+
+.rule-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr) minmax(0, 1fr) auto;
+  gap: var(--spacing-4);
+  padding: var(--spacing-6);
+  margin-bottom: var(--spacing-6);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--primary-fixed) 55%, transparent), transparent 35%),
+    linear-gradient(180deg, var(--surface-container-lowest), var(--surface-container-low));
+}
+
+.settings-field {
+  display: grid;
+  gap: 8px;
+}
+
+.settings-field input,
+.settings-field select {
+  min-height: 46px;
+  border-radius: 12px;
+  border-color: color-mix(in srgb, var(--border-subtle) 85%, var(--primary-fixed));
+  background: color-mix(in srgb, var(--surface-container-lowest) 86%, transparent);
+}
+
+.settings-submit-btn {
+  align-self: end;
+  min-height: 46px;
+  border-radius: 12px;
+  padding: 0 var(--spacing-5);
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  color: var(--on-primary);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 12px 26px color-mix(in srgb, var(--primary) 38%, transparent);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.settings-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 30px color-mix(in srgb, var(--primary) 44%, transparent);
+}
+
+.settings-empty {
+  padding: var(--spacing-8);
+  text-align: center;
+  opacity: 0.8;
+}
+
+.rules-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.rule-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-4) var(--spacing-6);
+  background:
+    linear-gradient(180deg, var(--surface-container-lowest), var(--surface-container-low));
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 85%, var(--primary-fixed));
+  border-radius: var(--radius-md);
+  animation: fadeIn 0.3s ease both;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
+}
+
+.rule-card-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.rule-keyword {
+  font-weight: 700;
+  color: var(--primary);
+  font-family: monospace;
+  background: color-mix(in srgb, var(--primary-fixed) 75%, transparent);
+  padding: 0.25rem 0.625rem;
+  border-radius: 999px;
+}
+
+.rule-arrow {
+  opacity: 0.55;
+}
+
+.btn-icon-delete {
+  padding: 0.5rem;
+  color: var(--status-urgent);
+  opacity: 0.6;
+  transition: var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon-delete:hover {
+  opacity: 1;
+  background: rgba(244, 63, 94, 0.1);
+  border-radius: 50%;
+}
+
+@media (max-width: 900px) {
+  .rule-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .settings-submit-btn,
+  .keyword-field {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .settings-page {
+    padding: var(--spacing-4);
+  }
+
+  .rule-form {
+    grid-template-columns: 1fr;
+    padding: var(--spacing-4);
+    gap: var(--spacing-3);
+  }
+}

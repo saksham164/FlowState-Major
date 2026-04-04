@@ -1,0 +1,93 @@
+.subject-folder-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.subject-folders-panel {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(16, 185, 129, 0.08), transparent 36%),
+    linear-gradient(180deg, var(--surface-container-lowest), var(--surface-container-low));
+}
+
+.subject-folder-row {
+  background: var(--surface-container-low);
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 86%, var(--primary-fixed));
+  border-radius: var(--radius-md);
+  padding: 0.8rem var(--spacing-3);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-3);
+  align-items: center;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  text-decoration: none;
+  color: inherit;
+}
+
+.subject-folder-row:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+}
+
+.subject-folder-main {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.subject-folder-main svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.subject-folder-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.subject-folder-meta {
+  font-size: 0.78rem;
+  opacity: 0.72;
+}
+
+.subject-folder-latest {
+  font-size: 0.78rem;
+  max-width: 170px;
+  text-align: right;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.subject-folder-latest.muted {
+  opacity: 0.7;
+}
+
+.subject-folder-actions {
+  margin-top: var(--spacing-4);
+}
+
+.subject-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  background: linear-gradient(140deg, var(--primary), var(--primary-container));
+  border: none;
+  border-radius: 12px;
+  padding: 0.55rem 0.9rem;
+  color: var(--on-primary);
+  text-decoration: none;
+  font-size: 0.83rem;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.18);
+}
+
+.subject-empty-state {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  background: var(--surface-container-low);
+  border-radius: var(--radius-md);
+}

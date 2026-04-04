@@ -1,0 +1,186 @@
+/* TaskManager.css */
+.card {
+  background: var(--surface-container-lowest);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  transition: box-shadow var(--transition-base);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-soft);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-5);
+}
+
+.task-order-hint {
+  margin-top: var(--spacing-1);
+}
+
+.task-tabs {
+  display: flex;
+  gap: var(--spacing-1);
+}
+
+.task-tabs button {
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--on-surface-variant);
+  transition: all var(--transition-fast);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.task-tabs button.active {
+  color: var(--on-surface);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.task-table-header {
+  display: grid;
+  grid-template-columns: 28px 2fr 1fr 1fr 1fr 40px;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-4);
+}
+
+.task-row {
+  display: grid;
+  grid-template-columns: 28px 2fr 1fr 1fr 1fr 40px;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  align-items: center;
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.task-row:hover {
+  background: var(--surface-container-low);
+}
+
+.task-row.dragging {
+  opacity: 0.55;
+}
+
+.task-row.drag-over {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.12);
+}
+
+.task-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--on-surface);
+}
+
+.task-drag-handle {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--on-surface-variant);
+  cursor: grab;
+}
+
+.task-drag-handle:hover {
+  background: var(--surface-container-low);
+  color: var(--on-surface);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-sm);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-urgent { background: rgba(220, 38, 38, 0.1); color: var(--status-urgent); }
+.badge-high { background: rgba(234, 88, 12, 0.1); color: var(--status-high); }
+.badge-medium { background: rgba(217, 119, 6, 0.1); color: var(--status-medium); }
+.badge-low { background: rgba(22, 163, 74, 0.1); color: var(--status-low); }
+
+/* Status dots */
+.status-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: 0.8125rem;
+  color: var(--on-surface-variant);
+}
+
+.status-dot::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--on-surface-variant);
+}
+
+.status-dot.in-progress::before { background: var(--secondary); }
+.status-dot.todo::before { background: var(--on-surface-variant); }
+.status-dot.completed::before { background: var(--status-success); }
+
+/* Ghost/Icon button */
+.btn-ghost {
+  background: transparent;
+  color: var(--on-surface-variant);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.btn-ghost:hover {
+  background: var(--surface-container-low);
+  color: var(--on-surface);
+}
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  padding: 0;
+}
+
+/* Inline Popover */
+.task-popover {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: var(--spacing-1);
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--surface-container-high);
+  box-shadow: var(--shadow-medium);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-2) var(--spacing-4);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  color: var(--status-urgent);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 10;
+  transition: background var(--transition-fast);
+}
+
+.task-popover:hover {
+  background: rgba(220, 38, 38, 0.05); /* Extra light red */
+}

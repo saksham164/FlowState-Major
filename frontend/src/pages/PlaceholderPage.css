@@ -1,0 +1,8 @@
+/* PlaceholderPage.css */
+.placeholder-page {
+  padding: var(--spacing-8) 0;
+}
+
+.placeholder-page .text-headline {
+  margin-bottom: var(--spacing-4);
+}

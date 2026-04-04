@@ -1,0 +1,107 @@
+.subject-folders-card {
+  padding: var(--spacing-5);
+}
+
+.subject-folders-header {
+  margin-bottom: var(--spacing-4);
+}
+
+.subject-folders-empty {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  color: var(--on-surface-variant);
+}
+
+.subject-upload-form {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.4fr 1.4fr auto;
+  gap: var(--spacing-3);
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+}
+
+.subject-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+.subject-folder-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.subject-folder-list.compact .subject-folder-item {
+  padding: var(--spacing-3);
+}
+
+.subject-folder-item {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-4);
+  background: var(--surface-container-low);
+}
+
+.subject-folder-title-row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-3);
+  align-items: center;
+  margin-bottom: var(--spacing-3);
+}
+
+.subject-folder-title-wrap {
+  display: inline-flex;
+  gap: var(--spacing-2);
+  align-items: center;
+}
+
+.subject-material-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.subject-material-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--spacing-2);
+  align-items: center;
+}
+
+.material-chip {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-full);
+  background: var(--surface-container-high);
+  color: var(--on-surface-variant);
+}
+
+.subject-material-title {
+  font-size: 0.86rem;
+  color: var(--on-surface);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subject-material-link {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .subject-upload-form {
+    grid-template-columns: 1fr;
+  }
+}

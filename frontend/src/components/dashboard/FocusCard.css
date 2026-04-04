@@ -1,0 +1,75 @@
+/* FocusCard.css */
+.focus-card {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+  color: var(--on-primary);
+  border-radius: 24px;
+  padding: var(--spacing-8) var(--spacing-6);
+  text-align: center;
+  box-shadow: var(--shadow-medium);
+}
+
+.focus-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+  margin-bottom: var(--spacing-4);
+}
+
+.focus-time {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: var(--spacing-6);
+}
+
+.focus-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-3);
+}
+
+.btn-start {
+  padding: var(--spacing-3) var(--spacing-8);
+  background: var(--secondary);
+  color: var(--on-secondary);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.btn-start:hover {
+  background: var(--secondary-container);
+  transform: translateY(-1px);
+}
+
+.btn-reset {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--on-primary);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.btn-reset:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.focus-break {
+  font-size: 0.8125rem;
+  opacity: 0.6;
+  margin-top: var(--spacing-4);
+}

@@ -1,0 +1,203 @@
+.deep-work-zone {
+  margin-top: var(--spacing-8);
+  animation: fadeIn 0.4s ease both;
+}
+
+.zone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+}
+
+.zone-icon {
+  color: var(--primary);
+  opacity: 0.8;
+}
+
+/* Base styling for Deep Work Zone Card */
+.zone-content {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 78, 59, 0.05));
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-xl) !important; /* Premium 24px Rounding */
+  padding: var(--spacing-6);
+  padding-bottom: var(--spacing-8);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 48px rgba(16, 185, 129, 0.08); /* Emerald Deep Depth */
+}
+
+/* Dark Mode Overrides for Deep Work Zone */
+.dark-mode .zone-content {
+  background: linear-gradient(145deg, rgba(16, 185, 129, 0.1), rgba(6, 78, 59, 0.05));
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  box-shadow: 0 16px 64px rgba(0, 0, 0, 0.3);
+}
+
+.session-prompt {
+  margin-bottom: var(--spacing-8);
+}
+
+.prompt-title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--secondary); /* High-intensity emerald prompt title */
+  margin-bottom: var(--spacing-3);
+  text-transform: capitalize;
+}
+
+.prompt-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--on-surface);
+  font-weight: 500;
+}
+
+.prompt-helper {
+  margin-top: var(--spacing-3);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--on-surface-variant);
+}
+
+.task-highlight {
+  color: var(--secondary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: rgba(16, 185, 129, 0.3);
+}
+
+.zone-status-row {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-4);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-full);
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.zone-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--on-surface-variant);
+}
+
+.zone-status-dot.idle {
+  background: var(--on-surface-variant);
+}
+
+.zone-status-dot.primed {
+  background: var(--status-high);
+  animation: pulseDot 1s ease-in-out infinite;
+}
+
+.zone-status-dot.launching {
+  background: var(--secondary);
+}
+
+.zone-status-text {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--on-surface);
+}
+
+/* Premium 'READY?' Button */
+.btn-ready {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-container)); /* Intense Emerald CTA */
+  color: white;
+  border-radius: var(--radius-lg);
+  font-weight: 800;
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.2s ease;
+  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.25);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ready:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 12px 48px rgba(16, 185, 129, 0.4);
+  opacity: 0.95;
+}
+
+.btn-ready:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-stage-primed {
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  box-shadow: 0 10px 32px rgba(217, 119, 6, 0.35);
+}
+
+.btn-stage-launching {
+  cursor: default;
+  background: linear-gradient(135deg, #10B981, #047857);
+  box-shadow: 0 10px 32px rgba(4, 120, 87, 0.35);
+}
+
+.ready-ripple {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+  opacity: 0;
+  pointer-events: none;
+  animation: readyRipple 450ms ease-out;
+}
+
+.zone-primed {
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.zone-launching {
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.dark-mode .btn-ready {
+  background: linear-gradient(135deg, var(--secondary), #065F46);
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .btn-stage-primed {
+  background: linear-gradient(135deg, #F59E0B, #B45309);
+}
+
+@keyframes readyRipple {
+  from {
+    opacity: 0.85;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulseDot {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 8px rgba(245, 158, 11, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+}

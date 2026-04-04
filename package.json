@@ -1,0 +1,32 @@
+{
+  "name": "flowstate",
+  "version": "1.0.0",
+  "main": "backend/server.js",
+  "scripts": {
+    "server": "node backend/server.js",
+    "server:dev": "node --watch backend/server.js",
+    "client": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "productivity",
+    "pomodoro",
+    "task-management"
+  ],
+  "author": "FlowState",
+  "license": "ISC",
+  "description": "FlowState — Productivity management system with React frontend and Express backend.",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.101.1",
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.0",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.10.1"
+  }
+}

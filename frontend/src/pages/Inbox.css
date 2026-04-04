@@ -1,0 +1,106 @@
+/* Inbox.css */
+.inbox-page {
+  padding: var(--spacing-8);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.inbox-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--spacing-10);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.inbox-item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-6);
+  background: var(--surface-container-lowest);
+  border-left: 4px solid var(--primary-fixed);
+  transition: transform var(--transition-fast);
+}
+
+.inbox-item-card:hover {
+  transform: translateX(4px);
+}
+
+.inbox-item-content {
+  flex: 1;
+  padding-right: var(--spacing-6);
+}
+
+.inbox-item-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.inbox-item-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-2);
+}
+
+.inbox-original-text {
+  margin-top: var(--spacing-4);
+  padding-left: var(--spacing-4);
+  border-left: 2px solid var(--surface-container-high);
+  font-family: monospace;
+  font-size: 0.8125rem;
+  color: var(--on-surface-variant);
+  line-height: 1.5;
+}
+
+.inbox-item-actions {
+  display: flex;
+  gap: var(--spacing-3);
+}
+
+.inbox-btn {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.inbox-btn.approve {
+  background: rgba(6, 78, 59, 0.1);
+  color: var(--primary);
+}
+
+.inbox-btn.approve:hover {
+  background: var(--primary);
+  color: var(--on-primary);
+  transform: scale(1.05);
+}
+
+.inbox-btn.reject {
+  background: var(--surface-container-low);
+  color: var(--on-surface-variant);
+}
+
+.inbox-btn.reject:hover {
+  background: var(--status-urgent);
+  color: white;
+  transform: scale(1.05);
+}

@@ -1,0 +1,289 @@
+.tasks-page {
+  padding: var(--spacing-8);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tasks-header {
+  margin-bottom: var(--spacing-8);
+}
+
+.tasks-header .text-display {
+  margin-bottom: var(--spacing-2);
+}
+
+.tasks-header .text-body {
+  color: var(--on-surface-variant);
+}
+
+/* Inline Quick Add */
+.quick-add-form {
+  display: flex;
+  align-items: center;
+  background-color: var(--surface-container-low);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-3) var(--spacing-4);
+  margin-bottom: var(--spacing-10);
+  transition: background-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.quick-add-form:focus-within {
+  background-color: var(--surface-container-lowest);
+  box-shadow: inset 0 0 0 2px var(--primary-fixed);
+}
+
+.quick-add-icon {
+  color: var(--on-surface-variant);
+  margin-right: var(--spacing-3);
+}
+
+.quick-add-form input.quick-add-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 1rem;
+  color: var(--on-surface);
+}
+
+.quick-add-form input.quick-add-input::placeholder {
+  color: var(--on-surface-variant);
+  opacity: 0.6;
+}
+
+.quick-add-options {
+  display: flex;
+  gap: var(--spacing-3);
+  margin-right: var(--spacing-3);
+}
+
+.quick-add-date,
+.quick-add-select {
+  background: var(--surface);
+  border: 1px solid var(--outline-variant);
+  color: var(--on-surface-variant);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-sm);
+  outline: none;
+  font-size: 0.875rem;
+  transition: border-color var(--transition-fast);
+}
+
+.quick-add-date:focus,
+.quick-add-select:focus {
+  border-color: var(--primary);
+  color: var(--on-surface);
+}
+
+/* Layout */
+.tasks-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+}
+
+.group-title {
+  margin-bottom: var(--spacing-6);
+  color: var(--on-surface-variant);
+}
+
+.tasks-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-6);
+}
+
+.tasks-group-header .group-title {
+  margin-bottom: 0;
+}
+
+.empty-state {
+  padding: var(--spacing-8);
+  text-align: center;
+  background-color: var(--surface-container-low);
+  border-radius: var(--radius-lg);
+  color: var(--on-surface-variant);
+}
+
+.task-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+/* Task Cards */
+.task-card {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-4) var(--spacing-5);
+  background-color: var(--surface-container-low);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.task-card:hover {
+  background-color: var(--surface-container-lowest);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.task-card.dragging {
+  opacity: 0.55;
+}
+
+.task-card.drag-over {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.15);
+}
+
+.task-drag-handle {
+  width: 32px;
+  height: 32px;
+  margin-right: var(--spacing-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--on-surface-variant);
+  border-radius: var(--radius-sm);
+  cursor: grab;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.task-drag-handle:hover {
+  background: var(--surface-container-lowest);
+  color: var(--on-surface);
+}
+
+.task-drag-handle:active {
+  cursor: grabbing;
+}
+
+.task-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--spacing-4);
+  color: var(--on-surface-variant);
+  transition: color var(--transition-fast);
+}
+
+.task-card:hover .task-toggle.pending {
+  color: var(--primary);
+}
+
+.task-toggle.done {
+  color: var(--secondary);
+}
+
+.task-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--on-surface);
+}
+
+.task-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.meta-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.meta-pill.priority-low { background-color: rgba(22, 163, 74, 0.1); color: var(--status-low); }
+.meta-pill.priority-medium { background-color: rgba(217, 119, 6, 0.1); color: var(--status-medium); }
+.meta-pill.priority-high { background-color: rgba(234, 88, 12, 0.1); color: var(--status-high); }
+.meta-pill.priority-urgent { background-color: rgba(220, 38, 38, 0.1); color: var(--status-urgent); }
+
+.meta-date {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  font-size: 0.875rem;
+  color: var(--on-surface-variant);
+}
+
+.task-delete {
+  opacity: 0;
+  margin-left: var(--spacing-4);
+  color: var(--status-urgent);
+  font-size: 0.875rem;
+}
+
+.task-card:hover .task-delete {
+  opacity: 1;
+}
+
+/* Completed State */
+.task-card.completed {
+  opacity: 0.6;
+  background-color: transparent;
+}
+
+.task-card.completed .task-drag-handle {
+  opacity: 0.5;
+}
+
+.task-card.completed .task-title {
+  text-decoration: line-through;
+  color: var(--on-surface-variant);
+}
+
+.task-card.completed:hover {
+  transform: none;
+  box-shadow: none;
+  background-color: var(--surface-container-low);
+}
+
+@media (max-width: 900px) {
+  .quick-add-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-3);
+  }
+
+  .quick-add-icon {
+    display: none;
+  }
+
+  .quick-add-options {
+    margin-right: 0;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 700px) {
+  .tasks-page {
+    padding: var(--spacing-6);
+  }
+
+  .task-card {
+    padding: var(--spacing-4);
+  }
+
+  .task-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-2);
+  }
+
+  .task-delete {
+    opacity: 1;
+  }
+}
