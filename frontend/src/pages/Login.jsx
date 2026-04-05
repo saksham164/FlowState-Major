@@ -45,7 +45,8 @@ export default function Login() {
     <div className="auth-wrapper">
       <div className="auth-card animate-fadeIn">
         <div className="auth-logo">
-          <h1>FlowState</h1>
+          <img src="/logo.png" alt="Flow State Logo" className="brand-logo" />
+          <h1>Flow State</h1>
           <span>The Digital Sanctuary</span>
         </div>
 

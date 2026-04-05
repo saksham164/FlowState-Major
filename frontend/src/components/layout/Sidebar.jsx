@@ -32,7 +32,8 @@ export default function Sidebar({ isOpen, onClose }) {
   return (
     <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
       <div className="sidebar-brand">
-        <h1>FlowState</h1>
+        <img src="/logo.png" alt="Flow State Logo" className="sidebar-logo" />
+        <h1>Flow State</h1>
         <span>The Digital Sanctuary</span>
       </div>
 
