@@ -29,7 +29,6 @@ export default function Dashboard() {
       <header className="workspace-header">
         <div className="flex-col">
           <h1 className="workspace-title">Workspace.</h1>
-          <p className="workspace-subtitle">Tracking flow for <span className="highlight">Modern Semester Cycle</span></p>
         </div>
         <div className="workspace-date">
           <div className="date-main">{new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</div>
