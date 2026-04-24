@@ -1,4 +1,4 @@
-import { RotateCcw, Coffee } from 'lucide-react'
+import { Play, Pause, RotateCcw } from 'lucide-react'
 import { useFocus } from '../../context/FocusContext'
 import './FocusCard.css'
 
@@ -11,23 +11,50 @@ function formatTime(seconds) {
 export default function FocusCard() {
   const { timeRemaining, isRunning, toggleTimer, resetTimer, currentMode } = useFocus()
 
-  const buttonLabel = isRunning ? 'Pause' 
-                    : timeRemaining < currentMode.duration ? 'Resume' 
-                    : 'Start'
+  // Circular progress calculation
+  const radius = 70
+  const circumference = 2 * Math.PI * radius
+  const strokeDashoffset = circumference - (timeRemaining / currentMode.duration) * circumference
 
   return (
-    <div className="focus-card animate-fadeIn">
-      <div className="focus-label">Focus Session</div>
-      <div className="focus-time">{formatTime(timeRemaining)}</div>
-      <div className="focus-actions">
-        <button className="btn-start" onClick={toggleTimer}>{buttonLabel}</button>
-        <button className="btn-reset" onClick={resetTimer} aria-label="Reset timer">
-          <RotateCcw size={20} />
+    <div className="focus-card-workspace">
+      <div className="focus-main-content">
+        <div className="focus-timer-large">
+          {formatTime(timeRemaining)}
+        </div>
+        
+        <div className="focus-ring-container">
+          <svg width="160" height="160" viewBox="0 0 160 160">
+            <circle
+              className="focus-ring-bg"
+              cx="80" cy="80" r={radius}
+            />
+            <circle
+              className="focus-ring-progress"
+              cx="80" cy="80" r={radius}
+              style={{
+                strokeDasharray: circumference,
+                strokeDashoffset: strokeDashoffset,
+              }}
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div className="focus-workspace-actions">
+        <button className="btn-initialize" onClick={toggleTimer}>
+          {isRunning ? <Pause size={18} fill="currentColor" /> : <Play size={18} fill="currentColor" />}
+          <span>{isRunning ? 'Pause' : 'Initialize'}</span>
+        </button>
+        <button className="btn-break" onClick={resetTimer}>
+          <RotateCcw size={18} />
+          <span>Break</span>
         </button>
       </div>
-      <div className="focus-break">
-        <Coffee size={14} style={{ display: 'inline', verticalAlign: '-2px' }} />
-        {' '}Short break in {Math.ceil(timeRemaining / 60)} mins
+
+      <div className="focus-sync-status">
+        <div className="status-dot" />
+        Real-time sync active
       </div>
     </div>
   )

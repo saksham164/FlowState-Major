@@ -15,7 +15,6 @@ export default function AppLayout() {
       <div className={`sidebar-overlay ${sidebarOpen ? 'active' : ''}`} onClick={() => setSidebarOpen(false)} />
 
       <div className="app-main">
-        <Topbar onMenuToggle={() => setSidebarOpen(prev => !prev)} />
         <main className="app-content">
           <Outlet />
         </main>

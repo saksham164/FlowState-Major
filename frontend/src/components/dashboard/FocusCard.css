@@ -1,75 +1,127 @@
 /* FocusCard.css */
-.focus-card {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
-  color: var(--on-primary);
-  border-radius: 24px;
-  padding: var(--spacing-8) var(--spacing-6);
-  text-align: center;
-  box-shadow: var(--shadow-medium);
+.focus-card-workspace {
+  background: var(--surface-container-lowest);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  min-height: 420px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
 }
 
-.focus-label {
-  font-size: 0.6875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  opacity: 0.7;
-  margin-bottom: var(--spacing-4);
+.focus-main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
 }
 
-.focus-time {
-  font-size: 3.5rem;
+.focus-timer-large {
+  font-size: 8.5rem;
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.05em;
+  color: var(--on-surface);
   line-height: 1;
-  margin-bottom: var(--spacing-6);
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
-.focus-actions {
+.focus-ring-container {
+  transform: rotate(-90deg);
+  opacity: 0.3;
+  margin-right: -20px;
+}
+
+.focus-ring-bg {
+  fill: none;
+  stroke: var(--surface-container-highest);
+  stroke-width: 6;
+}
+
+.focus-ring-progress {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 6;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+
+.focus-workspace-actions {
+  display: flex;
+  gap: 1.25rem;
+  z-index: 5;
+}
+
+.btn-initialize {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: var(--spacing-3);
-}
-
-.btn-start {
-  padding: var(--spacing-3) var(--spacing-8);
-  background: var(--secondary);
-  color: var(--on-secondary);
+  gap: 0.75rem;
+  padding: 0.85rem 2.5rem;
+  background: var(--primary-fixed);
+  color: var(--on-primary-container, #1E1B4B);
   border-radius: var(--radius-md);
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 700;
   border: none;
   cursor: pointer;
   transition: all var(--transition-fast);
-  font-family: inherit;
 }
 
-.btn-start:hover {
-  background: var(--secondary-container);
-  transform: translateY(-1px);
+.btn-initialize:hover {
+  background: var(--primary);
+  transform: translateY(-2px);
 }
 
-.btn-reset {
-  width: 44px;
-  height: 44px;
+.btn-break {
   display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--on-primary);
+  gap: 0.75rem;
+  padding: 0.85rem 2.5rem;
+  background: var(--surface-container-high);
+  color: var(--on-surface);
+  border-radius: var(--radius-md);
+  font-weight: 700;
   border: none;
   cursor: pointer;
-  transition: background var(--transition-fast);
+  transition: all var(--transition-fast);
 }
 
-.btn-reset:hover {
-  background: rgba(255, 255, 255, 0.2);
+.btn-break:hover {
+  background: var(--surface-container-highest);
+  transform: translateY(-2px);
 }
 
-.focus-break {
-  font-size: 0.8125rem;
-  opacity: 0.6;
-  margin-top: var(--spacing-4);
+.focus-sync-status {
+  position: absolute;
+  bottom: 2rem;
+  right: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--on-surface-variant);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: #22D3EE;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.5);
+}
+
+@media (max-width: 768px) {
+  .focus-timer-large {
+    font-size: 5rem;
+  }
+  .focus-ring-container {
+    display: none;
+  }
+  .focus-main-content {
+    justify-content: center;
+  }
 }

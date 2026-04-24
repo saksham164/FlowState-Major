@@ -2,14 +2,12 @@
   min-height: 100vh;
   display: grid;
   grid-template-columns: 230px 1fr;
-  background:
-    radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--primary-fixed) 32%, transparent), transparent 28%),
-    var(--surface);
+  background: var(--surface);
 }
 
 .profile-side-menu {
-  background: linear-gradient(180deg, #03382d 0%, #032920 100%);
-  color: #d5f9eb;
+  background: #0B0E14;
+  color: #F8FAFC;
   padding: var(--spacing-6) var(--spacing-4);
   display: flex;
   flex-direction: column;
@@ -22,41 +20,43 @@
 }
 
 .profile-side-brand span {
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
-  color: #9ce7cd;
-  font-weight: 600;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  color: #64748B;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .profile-side-link {
   width: 100%;
   border: none;
   background: transparent;
-  color: #bdeedb;
+  color: #94A3B8;
   display: flex;
   align-items: center;
   gap: var(--spacing-2);
   padding: 0.65rem 0.75rem;
   border-radius: var(--radius-md);
   text-align: left;
-  transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  transition: all var(--transition-fast);
 }
 
 .profile-side-link:hover {
-  background: rgba(16, 185, 129, 0.16);
-  color: #fff;
-  transform: translateX(1px);
+  background: rgba(255, 255, 255, 0.03);
+  color: #F8FAFC;
+  transform: translateX(2px);
 }
 
 .profile-side-link.active {
-  background: rgba(16, 185, 129, 0.25);
-  color: #fff;
+  background: rgba(129, 140, 248, 0.1);
+  color: #F8FAFC;
   font-weight: 600;
 }
 
 .profile-back-link {
   margin-top: auto;
-  border: 1px solid rgba(134, 239, 172, 0.28);
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .profile-main {
@@ -95,10 +95,8 @@
   gap: var(--spacing-4);
   padding: var(--spacing-4);
   border-radius: var(--radius-lg);
-  border: 1px solid color-mix(in srgb, var(--border-subtle) 83%, var(--primary-fixed));
-  background:
-    radial-gradient(circle at 85% 0%, color-mix(in srgb, var(--primary-fixed) 62%, transparent), transparent 36%),
-    linear-gradient(180deg, var(--surface-container-lowest), var(--surface-container-low));
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-container-low);
 }
 
 .profile-avatar {
@@ -141,8 +139,8 @@
 .profile-side-card {
   padding: var(--spacing-4);
   border-radius: var(--radius-lg);
-  background:
-    linear-gradient(180deg, var(--surface-container-lowest), var(--surface-container-low));
+  background: var(--surface-container-low);
+  border: 1px solid var(--border-subtle);
 }
 
 .profile-form,
@@ -298,10 +296,8 @@
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: var(--spacing-4);
-  background:
-    radial-gradient(circle at 12% 5%, rgba(16, 185, 129, 0.08), transparent 35%),
-    linear-gradient(180deg, var(--surface-container-lowest), var(--surface-container-low));
-  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.06);
+  background: var(--surface-container-low);
+  box-shadow: none;
 }
 
 .profile-folder-card h4 {

@@ -6,7 +6,7 @@
 
 .subject-folders-panel {
   background:
-    radial-gradient(circle at 15% 0%, rgba(16, 185, 129, 0.08), transparent 36%),
+    radial-gradient(circle at 15% 0%, rgba(79, 70, 229, 0.05), transparent 36%),
     linear-gradient(180deg, var(--surface-container-lowest), var(--surface-container-low));
 }
 
@@ -19,14 +19,14 @@
   justify-content: space-between;
   gap: var(--spacing-3);
   align-items: center;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition: transform var(--transition-fast);
   text-decoration: none;
   color: inherit;
 }
 
 .subject-folder-row:hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+  box-shadow: none;
 }
 
 .subject-folder-main {
@@ -74,13 +74,13 @@
   gap: var(--spacing-2);
   background: linear-gradient(140deg, var(--primary), var(--primary-container));
   border: none;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   padding: 0.55rem 0.9rem;
   color: var(--on-primary);
   text-decoration: none;
   font-size: 0.83rem;
   font-weight: 600;
-  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.18);
+  box-shadow: none;
 }
 
 .subject-empty-state {

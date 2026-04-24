@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 /* ===========================================================
-   FlowState — Core Design System (Midnight Emerald Edition)
+   FlowState — Core Design System (Modern Indigo Edition)
    =========================================================== */
 
 /* ===========================================================
@@ -22,10 +22,10 @@
   --spacing-8: 2rem;
   --spacing-10: 2.5rem;
   
-  --radius-sm: 0.5rem; /* 8px Roundness */
-  --radius-md: 0.75rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem; /* 24px Roundness */
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 2rem;
   --radius-full: 9999px;
 
   --transition-fast: 150ms ease;
@@ -35,77 +35,60 @@
   --sidebar-collapsed: 72px;
   --topbar-height: 64px;
 
-  /* RGB version of surface for transparency */
-  --surface-rgb: 248, 250, 252;
-
-  /* Default Light Mode Tokens (The Quiet Architect) */
-  --primary: #003527;
-  --primary-container: #064E3B;
-  --primary-fixed: #B0F0D6;
+  /* --- Light Mode Tokens (Default) --- */
+  --surface: #FFFFFF;
+  --surface-rgb: 255, 255, 255;
+  --surface-container-low: #F8FAFC; 
+  --surface-container-lowest: #FFFFFF;
+  --surface-container-high: #F1F5F9;
+  --surface-container-highest: #E2E8F0;
+  --on-surface: #1E293B;
+  --on-surface-variant: #64748B;
+  
+  --primary: #4F46E5;
+  --primary-container: #4338CA;
+  --primary-fixed: #E0E7FF;
   --on-primary: #FFFFFF;
   
-  --secondary: #10B981;
-  --secondary-container: #0D8F64;
+  --secondary: #0EA5E9;
   --on-secondary: #FFFFFF;
 
-  --tertiary: #242F41;
-  --on-tertiary: #FFFFFF;
-
-  --surface: #F1F5F9; /* Deeper background for white card contrast */
-  --surface-container-low: #FFFFFF; /* High elevation POP */
-  --surface-container-lowest: #FFFFFF;
-  --surface-container-high: #E2E8F0;
-  --on-surface: #0F172A;
-  --on-surface-variant: #475569;
-  
-  --outline-variant: rgba(191, 201, 195, 0.15);
-  --border-subtle: #CBD5E1;
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --outline-variant: rgba(0, 0, 0, 0.03);
 
   --status-urgent: #DC2626;
   --status-high: #EA580C;
   --status-medium: #D97706;
   --status-low: #16A34A;
-  
-  --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.05); /* Fixed broken reference */
-  --shadow-soft: 0 4px 32px rgba(0, 0, 0, 0.08); /* Stronger depth */
-  --shadow-medium: 0 8px 48px rgba(0, 0, 0, 0.1);
-  --shadow-elevated: 0 16px 64px rgba(0, 0, 0, 0.15);
+
+  --error: #EF4444;
+  --warning: #F59E0B;
+  --warning-light: #FBBF24;
+  --success: #10B981;
 }
 
-/* Midnight Emerald (Dark Mode) Mapping */
+/* Dark Mode Mapping */
 .dark-mode {
-  --primary: #10B981;
-  --primary-container: #064E3B;
-  --primary-fixed: #064E3B;
-  --on-primary: #F8FAFC;
-
-  --secondary: #34D399;
-  --secondary-container: #059669;
-  --on-secondary: #020617;
-
-  --tertiary: #1E293B;
-  --on-tertiary: #F8FAFC;
-
-  --surface: #020617;
-  --surface-container-low: #111827; /* Elevated dark card POP */
-  --surface-container-lowest: #020617;
-  --surface-container-high: #1F2937;
-  --on-surface: #F8FAFC;
+  --surface: #05070A;
+  --surface-rgb: 5, 7, 10;
+  --surface-container-low: #0B0E14; 
+  --surface-container-lowest: #05070A;
+  --surface-container-high: #111827;
+  --surface-container-highest: #1F2937;
+  --on-surface: #F1F5F9;
   --on-surface-variant: #94A3B8;
   
-  --outline-variant: #1F2937;
-  --border-subtle: #1F2937;
+  --primary: #818CF8;
+  --primary-container: #4F46E5;
+  --on-primary: #FFFFFF;
 
-  --surface-rgb: 2, 6, 23;
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --outline-variant: rgba(255, 255, 255, 0.03);
 
-  --status-urgent: #F43F5E;
-  --status-high: #F59E0B;
-  --status-medium: #F59E0B;
-  --status-low: #10B981;
-  
-  --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --shadow-medium: 0 12px 48px rgba(0, 0, 0, 0.5);
-  --shadow-elevated: 0 16px 64px rgba(0, 0, 0, 0.6);
+  --error: #F87171;
+  --warning: #FB923C;
+  --warning-light: #FBBF24;
+  --success: #34D399;
 }
 
 /* ===========================================================
@@ -144,13 +127,13 @@ input, textarea, select {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   padding: var(--spacing-2) var(--spacing-4);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition: border-color var(--transition-fast);
 }
 
 input:focus, textarea:focus, select:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 2px var(--primary-fixed);
+  box-shadow: none;
 }
 
 /* Fix for native dropdown (option) backgrounds in dark mode */
@@ -163,17 +146,17 @@ option {
    3. Typography Component Library
    =========================================================== */
 .text-display {
-  font-size: 2.75rem;
+  font-size: 3rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
   color: var(--on-surface);
 }
 
 .text-headline {
   font-size: 1.75rem;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   line-height: 1.25;
   color: var(--on-surface);
 }
@@ -181,7 +164,8 @@ option {
 .text-title {
   font-size: 1.25rem;
   font-weight: 600;
-  line-height: 1.35;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
   color: var(--on-surface);
 }
 
@@ -200,16 +184,17 @@ option {
 }
 
 .text-label {
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.6875rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   color: var(--on-surface-variant);
 }
 
 .text-caption {
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   font-weight: 500;
+  letter-spacing: 0.02em;
   color: var(--on-surface-variant);
 }
 
@@ -220,8 +205,8 @@ option {
   background: var(--surface-container-low);
   border: 1px solid var(--outline-variant);
   border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-soft);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  box-shadow: none !important;
+  transition: transform var(--transition-base);
 }
 
 .badge {
@@ -251,7 +236,7 @@ option {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 32px var(--shadow-soft);
+  box-shadow: none;
   z-index: 1000;
   transition: var(--transition-base);
 }

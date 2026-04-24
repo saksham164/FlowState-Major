@@ -1,186 +1,206 @@
 /* TaskManager.css */
-.card {
+.task-queue-workspace {
   background: var(--surface-container-lowest);
   border-radius: var(--radius-lg);
-  padding: var(--spacing-6);
-  transition: box-shadow var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
 }
 
-.card:hover {
-  box-shadow: var(--shadow-soft);
+.task-queue-header {
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
-.card-header {
+.task-tabs-minimal {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.task-tabs-minimal button {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--on-surface-variant);
+  transition: color 0.2s;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.task-tabs-minimal button.active {
+  color: var(--on-surface);
+}
+
+.task-filter-btn {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--spacing-5);
-}
-
-.task-order-hint {
-  margin-top: var(--spacing-1);
-}
-
-.task-tabs {
-  display: flex;
-  gap: var(--spacing-1);
-}
-
-.task-tabs button {
-  padding: var(--spacing-1) var(--spacing-3);
-  border-radius: var(--radius-sm);
+  gap: 0.5rem;
   font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--on-surface-variant);
-  transition: all var(--transition-fast);
+  font-weight: 700;
+  color: var(--primary);
   background: none;
   border: none;
   cursor: pointer;
-  font-family: inherit;
 }
 
-.task-tabs button.active {
-  color: var(--on-surface);
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.task-table-header {
+.task-thead {
   display: grid;
-  grid-template-columns: 28px 2fr 1fr 1fr 1fr 40px;
-  gap: var(--spacing-3);
-  padding: var(--spacing-3) var(--spacing-4);
-}
-
-.task-row {
-  display: grid;
-  grid-template-columns: 28px 2fr 1fr 1fr 1fr 40px;
-  gap: var(--spacing-3);
-  padding: var(--spacing-4);
-  align-items: center;
-  border-radius: var(--radius-md);
-  transition: background var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
-  border: 1px solid transparent;
-}
-
-.task-row:hover {
+  grid-template-columns: 2fr 1fr 1fr 1fr 40px;
+  padding: 1rem 2rem;
   background: var(--surface-container-low);
-}
-
-.task-row.dragging {
-  opacity: 0.55;
-}
-
-.task-row.drag-over {
-  border-color: var(--secondary);
-  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.12);
-}
-
-.task-name {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--on-surface);
-}
-
-.task-drag-handle {
-  width: 22px;
-  height: 22px;
-  border-radius: var(--radius-sm);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--on-surface-variant);
-  cursor: grab;
-}
-
-.task-drag-handle:hover {
-  background: var(--surface-container-low);
-  color: var(--on-surface);
-}
-
-/* Badges */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  padding: var(--spacing-1) var(--spacing-3);
-  border-radius: var(--radius-sm);
+  border-bottom: 1px solid var(--border-subtle);
   font-size: 0.6875rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.12em;
+  color: var(--on-surface-variant);
 }
 
-.badge-urgent { background: rgba(220, 38, 38, 0.1); color: var(--status-urgent); }
-.badge-high { background: rgba(234, 88, 12, 0.1); color: var(--status-high); }
-.badge-medium { background: rgba(217, 119, 6, 0.1); color: var(--status-medium); }
-.badge-low { background: rgba(22, 163, 74, 0.1); color: var(--status-low); }
+.task-tbody {
+  display: flex;
+  flex-direction: column;
+}
 
-/* Status dots */
-.status-dot {
-  display: inline-flex;
+.task-row-workspace {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 40px;
+  padding: 1.25rem 2rem;
   align-items: center;
-  gap: var(--spacing-2);
-  font-size: 0.8125rem;
-  color: var(--on-surface-variant);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background 0.2s;
 }
 
-.status-dot::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  border-radius: var(--radius-full);
-  background: var(--on-surface-variant);
+.task-row-workspace:last-child {
+  border-bottom: none;
 }
 
-.status-dot.in-progress::before { background: var(--secondary); }
-.status-dot.todo::before { background: var(--on-surface-variant); }
-.status-dot.completed::before { background: var(--status-success); }
-
-/* Ghost/Icon button */
-.btn-ghost {
-  background: transparent;
-  color: var(--on-surface-variant);
-  border: none;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-.btn-ghost:hover {
+.task-row-workspace:hover {
   background: var(--surface-container-low);
+}
+
+.task-name-main {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--on-surface);
+  transition: all 0.3s ease;
+}
+
+.task-name-main.completed-text {
+  color: var(--on-surface-variant);
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.task-subject {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--on-surface-variant);
+}
+
+/* Priority Tags */
+.priority-tag {
+  font-size: 0.625rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.priority-urgent { background: rgba(220, 38, 38, 0.15); color: var(--error); }
+.priority-high { background: rgba(249, 115, 22, 0.15); color: var(--warning); }
+.priority-medium { background: rgba(217, 119, 6, 0.15); color: var(--warning-light); }
+.priority-low { background: rgba(30, 41, 59, 0.5); color: var(--on-surface-variant); }
+
+/* Status Containers */
+.status-container {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
   color: var(--on-surface);
 }
-.btn-icon {
-  width: 32px;
-  height: 32px;
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-todo .status-indicator { background: var(--on-surface-variant); }
+.status-in-progress .status-indicator { background: #22D3EE; box-shadow: 0 0 8px #22D3EE; }
+.status-completed .status-indicator { background: #4ADE80; box-shadow: 0 0 8px #4ADE80; }
+
+.btn-icon-workspace {
+  color: var(--on-surface-variant);
+  padding: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-full);
-  padding: 0;
 }
 
-/* Inline Popover */
-.task-popover {
+.btn-icon-workspace:hover {
+  color: var(--on-surface);
+}
+
+.task-actions-cell {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.task-menu-workspace {
   position: absolute;
   top: 100%;
   right: 0;
-  margin-top: var(--spacing-1);
-  background: var(--surface-container-lowest);
-  border: 1px solid var(--surface-container-high);
-  box-shadow: var(--shadow-medium);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-2) var(--spacing-4);
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-2);
-  color: var(--status-urgent);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  cursor: pointer;
+  background: var(--surface-container-low);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 4px;
   z-index: 10;
-  transition: background var(--transition-fast);
+  min-width: 100px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-.task-popover:hover {
-  background: rgba(220, 38, 38, 0.05); /* Extra light red */
+.task-menu-workspace button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--on-surface);
+  border-radius: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.task-menu-workspace button:hover {
+  background: var(--surface-container-high);
+}
+
+.task-menu-workspace button.delete-action {
+  color: #F87171;
+}
+
+.task-menu-workspace button.delete-action:hover {
+  background: rgba(248, 113, 113, 0.1);
+}
+
+.task-empty-state {
+  padding: 3rem;
+  text-align: center;
+  color: var(--on-surface-variant);
+  font-size: 0.875rem;
 }

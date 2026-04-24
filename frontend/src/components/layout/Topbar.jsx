@@ -123,7 +123,7 @@ export default function Topbar({ onMenuToggle }) {
             <div className="profile-dropdown" style={{ 
               position: 'absolute', top: '100%', right: '0', marginTop: '12px', 
               background: 'var(--surface-container-lowest)', border: '1px solid var(--surface-container-high)', 
-              borderRadius: 'var(--radius-md)', padding: '4px', boxShadow: 'var(--shadow-medium)', 
+              borderRadius: 'var(--radius-md)', padding: '4px', boxShadow: 'none', 
               zIndex: 100, minWidth: '160px' 
             }}>
               <div style={{ padding: '8px 12px', borderBottom: '1px solid var(--surface-container-high)', marginBottom: '4px' }}>

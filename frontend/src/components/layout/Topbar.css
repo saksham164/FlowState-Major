@@ -1,26 +1,25 @@
 /* Topbar.css */
 .topbar {
-  position: fixed;
-  top: 0;
-  left: var(--sidebar-width);
-  right: 0;
+  position: sticky;
+  top: var(--spacing-4);
+  margin: var(--spacing-4);
   height: var(--topbar-height);
-  background: rgba(var(--surface-rgb), 0.85) !important;
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
+  background: rgba(var(--surface-rgb), 0.8) !important;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--spacing-8);
-  z-index: 1000; /* Guaranteed pointer safety */
-  pointer-events: auto;
-  border-bottom: 2px solid var(--border-subtle); /* Thicker for definition */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); /* Physical depth lift */
-  transition: left var(--transition-base), background var(--transition-fast), box-shadow var(--transition-fast);
+  padding: 0 var(--spacing-6);
+  z-index: 90;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+  transition: all var(--transition-base);
 }
 
 .dark-mode .topbar {
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+  box-shadow: none;
   background: rgba(var(--surface-rgb), 0.75) !important;
 }
 
@@ -46,13 +45,13 @@
   padding: 0.62rem 0.95rem;
   min-width: 360px;
   border: 1px solid var(--surface-container-high);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 8px 20px rgba(15, 23, 42, 0.06);
-  transition: background var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  box-shadow: none;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
 }
 
 .topbar-search:focus-within {
   border-color: color-mix(in srgb, var(--primary) 42%, var(--border-subtle));
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-fixed) 42%, transparent), 0 10px 24px rgba(15, 23, 42, 0.1);
+  box-shadow: none;
 }
 
 .topbar-search input {
@@ -119,14 +118,14 @@
   background: linear-gradient(160deg, var(--surface-container-lowest), var(--surface-container-low));
   border: 1px solid var(--surface-container-high);
   cursor: pointer;
-  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+  box-shadow: none;
 }
 
 .topbar-btn:hover {
   background: linear-gradient(160deg, var(--surface-container-low), var(--surface-container-lowest));
   color: var(--primary);
   transform: translateY(-1px);
-  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.12);
+  box-shadow: none;
 }
 
 .notification-trigger {
@@ -160,12 +159,12 @@
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition: transform var(--transition-fast);
 }
 
 .btn-new-event:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 24px rgba(0, 53, 39, 0.25);
+  box-shadow: none;
   filter: brightness(1.1);
 }
 
@@ -177,13 +176,13 @@
   cursor: pointer;
   transition: all var(--transition-fast);
   border: 1px solid var(--surface-container-high);
-  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+  box-shadow: none;
 }
 
 .topbar-avatar:hover {
   transform: translateY(-1px);
   border-color: var(--primary);
-  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.14);
+  box-shadow: none;
 }
 
 .avatar-placeholder {
@@ -232,7 +231,7 @@
   margin-top: var(--spacing-2);
   background: var(--surface-container-lowest);
   border-radius: 14px;
-  box-shadow: 0 18px 35px rgba(2, 8, 23, 0.16);
+  box-shadow: none;
   border: 1px solid var(--surface-container-high);
   overflow: hidden;
   z-index: 100;
@@ -280,7 +279,7 @@
   background: var(--surface-container-lowest);
   border: 1px solid var(--surface-container-high);
   border-radius: 18px;
-  box-shadow: 0 24px 48px rgba(2, 8, 23, 0.2);
+  box-shadow: none;
   overflow: hidden;
   z-index: 120;
 }
@@ -384,5 +383,5 @@
 }
 
 .dark-mode .topbar-search {
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 10px 22px rgba(0, 0, 0, 0.36);
+  box-shadow: none;
 }

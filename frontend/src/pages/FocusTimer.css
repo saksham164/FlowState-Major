@@ -30,7 +30,7 @@
 
 .task-selector-wrapper:focus-within {
   background-color: var(--surface-container-lowest);
-  box-shadow: 0 0 0 2px var(--primary-fixed);
+  box-shadow: none;
 }
 
 .task-selector-icon {
@@ -57,7 +57,7 @@
   padding: var(--spacing-10);
   border-radius: var(--radius-xl);
   border: 1px solid var(--outline-variant);
-  box-shadow: var(--shadow-small);
+  box-shadow: none;
 }
 
 .focus-modes {
@@ -86,7 +86,7 @@
 .mode-btn.active {
   background-color: var(--surface-container-lowest);
   color: var(--on-surface);
-  box-shadow: var(--shadow-small);
+  box-shadow: none;
 }
 
 /* Timer Ring */
@@ -146,13 +146,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 16px rgba(0, 53, 39, 0.2);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: none;
+  transition: transform var(--transition-fast);
 }
 
 .btn-play-huge:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0, 53, 39, 0.3);
+  box-shadow: none;
 }
 
 .btn-play-huge:active {

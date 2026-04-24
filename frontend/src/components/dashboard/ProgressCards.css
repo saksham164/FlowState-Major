@@ -1,107 +1,80 @@
 /* ProgressCards.css */
-.section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--spacing-4);
-  gap: var(--spacing-3);
-}
-
-.progress-row {
+.subject-mastery-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--spacing-4);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
-.progress-card {
+.subject-mastery-card {
   background: var(--surface-container-lowest);
   border-radius: var(--radius-lg);
-  padding: var(--spacing-5);
-  transition: box-shadow var(--transition-base);
-}
-
-.progress-card:hover {
-  box-shadow: var(--shadow-soft);
-}
-
-.progress-card-top {
+  padding: 1.75rem 2rem;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: var(--spacing-3);
+  flex-direction: column;
+  gap: 1.25rem;
+  border: 1px solid var(--border-subtle);
+  transition: transform var(--transition-fast);
 }
 
-.progress-card-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-md);
-  background: var(--surface-container-low);
+.subject-mastery-card:hover {
+  transform: translateY(-4px);
+}
+
+.mastery-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mastery-icon-box {
+  width: 52px;
+  height: 52px;
+  background: #111827; /* Deep card dark */
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary-container);
+  color: #818CF8; /* Indigo accent */
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.tag {
-  padding: var(--spacing-1) var(--spacing-2);
-  border-radius: var(--radius-sm);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  background: var(--surface-container-low);
-  color: var(--on-surface-variant);
+.mastery-percentage {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #64748B;
+  letter-spacing: 0.02em;
 }
 
-.progress-card-title {
-  font-size: 1rem;
-  font-weight: 600;
+.mastery-subject-name {
+  font-size: 1.375rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   color: var(--on-surface);
-  margin-bottom: 2px;
+  margin: 0;
 }
 
-.progress-bar-track {
-  height: 4px;
-  background: var(--surface-container-high);
+.mastery-progress-track {
+  height: 6px;
+  background: #1F2937;
   border-radius: var(--radius-full);
-  margin-top: var(--spacing-3);
   overflow: hidden;
 }
 
-.progress-bar-fill {
+.mastery-progress-fill {
   height: 100%;
-  background: var(--secondary);
+  background: linear-gradient(90deg, #6366F1, #818CF8);
   border-radius: var(--radius-full);
-  transition: width var(--transition-slow);
 }
 
-.progress-meta {
-  display: flex;
-  justify-content: space-between;
-  margin-top: var(--spacing-2);
-}
-
-.progress-summary-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-2);
-  padding: var(--spacing-2) var(--spacing-3);
-  border-radius: var(--radius-full);
-  background: var(--surface-container-low);
+.subject-mastery-loading {
+  padding: 2rem;
+  text-align: center;
   color: var(--on-surface-variant);
-  font-size: 0.75rem;
   font-weight: 600;
 }
 
-.progress-trend-card {
-  margin-top: var(--spacing-4);
-}
-
-.progress-chart-wrap {
-  height: 260px;
-}
-
 @media (max-width: 768px) {
-  .section-header {
-    align-items: flex-start;
-    flex-direction: column;
+  .subject-mastery-row {
+    grid-template-columns: 1fr;
   }
 }

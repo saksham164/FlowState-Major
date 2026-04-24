@@ -11,9 +11,8 @@
 .settings-hero {
   padding: var(--spacing-5);
   border-radius: var(--radius-lg);
-  background:
-    radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--primary-fixed) 62%, transparent), transparent 42%),
-    linear-gradient(180deg, var(--surface-container-lowest), var(--surface-container-low));
+  background: var(--surface-container-low);
+  border: 1px solid var(--border-subtle);
 }
 
 .settings-hero-title-row {
@@ -64,9 +63,8 @@
   padding: var(--spacing-6);
   margin-bottom: var(--spacing-6);
   border-radius: var(--radius-lg);
-  background:
-    radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--primary-fixed) 55%, transparent), transparent 35%),
-    linear-gradient(180deg, var(--surface-container-lowest), var(--surface-container-low));
+  background: var(--surface-container-low);
+  border: 1px solid var(--border-subtle);
 }
 
 .settings-field {
@@ -94,13 +92,13 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  box-shadow: 0 12px 26px color-mix(in srgb, var(--primary) 38%, transparent);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: none;
+  transition: transform var(--transition-fast);
 }
 
 .settings-submit-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 16px 30px color-mix(in srgb, var(--primary) 44%, transparent);
+  box-shadow: none;
 }
 
 .settings-empty {
@@ -120,12 +118,11 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--spacing-4) var(--spacing-6);
-  background:
-    linear-gradient(180deg, var(--surface-container-lowest), var(--surface-container-low));
-  border: 1px solid color-mix(in srgb, var(--border-subtle) 85%, var(--primary-fixed));
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   animation: fadeIn 0.3s ease both;
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
+  box-shadow: none;
 }
 
 .rule-card-info {

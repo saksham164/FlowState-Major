@@ -65,11 +65,11 @@ export default function Analytics() {
       {
         label: 'Focus Hours',
         data: activeSeries.data,
-        backgroundColor: 'rgba(0, 108, 73, 0.2)',
-        borderColor: '#006C49',
-        borderWidth: 2,
+        backgroundColor: 'rgba(79, 70, 229, 0.1)',
+        borderColor: '#4F46E5',
+        borderWidth: 3,
         pointBackgroundColor: '#FFFFFF',
-        pointBorderColor: '#006C49',
+        pointBorderColor: '#4F46E5',
         pointBorderWidth: 2,
         pointRadius: 4,
         fill: chartType === 'line',
@@ -79,7 +79,7 @@ export default function Analytics() {
     ]
   }
 
-  const categoryColors = ['#10B981', '#0F766E', '#F59E0B', '#2563EB', '#8B5CF6']
+  const categoryColors = ['#4F46E5', '#0EA5E9', '#8B5CF6', '#334155', '#6366F1']
 
   const categoryTrendData = {
     labels: categoryTrend.labels,
@@ -98,7 +98,7 @@ export default function Analytics() {
       {
         label: 'Sessions',
         data: sessionLengthDistribution.map((bucket) => bucket.count),
-        backgroundColor: ['#10B981', '#22C55E', '#F59E0B', '#2563EB'],
+        backgroundColor: ['#4F46E5', '#6366F1', '#818CF8', '#0EA5E9'],
         borderRadius: 10,
       },
     ],

@@ -9,26 +9,37 @@
 .insight-stat {
   background: var(--surface-container-low);
   border-radius: var(--radius-md);
-  padding: var(--spacing-4);
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border-subtle);
 }
 
 .stat-label {
-  font-size: 0.6875rem;
-  font-weight: 600;
+  font-size: 0.625rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--on-surface-variant);
-  margin-bottom: var(--spacing-2);
+  letter-spacing: 0.1em;
+  color: #64748B;
+  margin-bottom: 0.75rem;
 }
 
 .stat-value {
-  font-size: 1.5rem;
+  font-size: 1.625rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--on-surface);
+  line-height: 1;
+}
+
+.insights-panel .text-title {
+  font-size: 1.25rem;
   font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--on-surface);
 }
 
 .insights-header {
   align-items: flex-start;
+  margin-bottom: 2rem !important;
 }
 
 .insights-generated-at {

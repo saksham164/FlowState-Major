@@ -30,7 +30,8 @@
   align-items: center;
   padding: var(--spacing-6);
   background: var(--surface-container-lowest);
-  border-left: 4px solid var(--primary-fixed);
+  border: 1px solid var(--border-subtle);
+  box-shadow: none !important;
   transition: transform var(--transition-fast);
 }
 
@@ -58,8 +59,9 @@
 
 .inbox-original-text {
   margin-top: var(--spacing-4);
-  padding-left: var(--spacing-4);
-  border-left: 2px solid var(--surface-container-high);
+  padding: var(--spacing-4);
+  background: var(--surface-container-high);
+  border-radius: var(--radius-sm);
   font-family: monospace;
   font-size: 0.8125rem;
   color: var(--on-surface-variant);
@@ -84,7 +86,7 @@
 }
 
 .inbox-btn.approve {
-  background: rgba(6, 78, 59, 0.1);
+  background: rgba(79, 70, 229, 0.1);
   color: var(--primary);
 }
 
